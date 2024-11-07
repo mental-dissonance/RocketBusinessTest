@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="overlay hidden"></div>
+    <div class="wrap hidden">
+        <section class="modal">
+            <div class="modal-content">
+                <div class="modal-head">
+                    <span>Оставьте заявку</span>
+                    <span class="closeModal">
+                        <img src="img/x.svg" alt="">
+                    </span>
+                </div>
+                <div class="modal-mid">
+                    <input class="valid" type="text" id="name" placeholder="Ваше имя *">
+                    <span class="warning name-warn" id="name_warn">Поле не заполнено</span>
+                    <input class="valid" type="text" id="number" placeholder="Номер телефона*">
+                    <span class="warning number-warn" id="number_warn">Поле не заполнено</span>
+                </div>
+                <div class="modal-foot">
+                    <div class="modal-foot__checkbox">
+                        <input type="checkbox" id="personality" onchange="document.getElementById('submit').disabled = !this.checked;">
+                        <label for="personality">Я соглашаюсь на обработку персональных данных</label>
+                    </div>
+                    <button id="submit" class="btn modal__btn" disabled>Отправить</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="video">
+        <iframe frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen
+        srcdoc="
+            <link rel=preconnect href=https://fonts.googleapis.com>
+            <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+            <link href=https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap rel=stylesheet>
+        <style>*{padding:0;margin:0;overflow:hidden}
+            html,body{height:100%}
+            .inter-font {font-family: Inter, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;}
+            span{position:absolute;width:100%;top:0;bottom:0;margin:auto;height:18px;text-align:center;font:500 14px Inter;color:white;}
+            #over{position:absolute;width:100%;top:0;bottom:0;margin:auto}
+            #par{width:196px;height:33px;transform:skew(-20deg);background:#18C576;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;}
+            #play{height:12px;}    
+        </style>
+            <a href=https://rutube.ru/play/embed/43af9206c1a7019b90051fb76c99119d?autoplay=1>
+            <img id=over src=img/video_overlay.png alt='Demo video'>
+            <div id=par></div>
+            <span>Смотреть видео &nbsp<img id=play src=img/play.png></span>
+            </a>"></iframe>
+    </div>
+
+    <div class="products">
+        <div class="content">
+            <div class="content-elem">
+                <span class="content-elem__background">
+                    <img src="img/goroh.jpg" alt="">
+                </span>
+                <div class="content-elem__text">
+                    <div class="content-elem__title">
+                        <span>Горох в стручках, 1 кг</span>
+                        <div class="content-elem__title-svg">
+                            <img class="svg_like" src="img/like.svg" alt="">
+                            <img src="img/Eye.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-elem__description">
+                        <div class="content-elem__promo">
+                            <span class="promo_green">- 29%</span>
+                            <span class="promo_yellow">Товар дня</span>
+                        </div>
+                        <div class="content-elem__price">
+                            <span>570 ₽</span>
+                            <button class="btn price_btn openModal">Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-elem">
+                <span class="content-elem__background">
+                    <img src="img/blueberry.jpg" alt="">
+                </span>
+                <div class="content-elem__text">
+                    <div class="content-elem__title">
+                        <span>Голубика лесная, 200 г</span>
+                        <div class="content-elem__title-svg">
+                            <img src="img/like.svg" alt="">
+                            <img src="img/Eye.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-elem__description">
+                        <div class="content-elem__promo">
+                            <span class="promo_pink">- 31%</span>
+                            <span class="promo_blue">Распродажа</span>
+                        </div>
+                        <div class="content-elem__price">
+                            <span>140 ₽</span>
+                            <button class="btn price_btn openModal">Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-elem">
+                <span class="content-elem__background">
+                    <img src="img/carrot.jpg" alt="">
+                </span>
+                <div class="content-elem__text">
+                    <div class="content-elem__title">
+                        <span>Морковь мытая, 1 кг</span>
+                        <div class="content-elem__title-svg">
+                            <img src="img/like.svg" alt="">
+                            <img src="img/Eye.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-elem__description">
+                        <div class="content-elem__promo">
+                            <span class="promo_purple">Хит</span>
+                        </div>
+                        <div class="content-elem__price">
+                            <span>140 ₽</span>
+                            <button class="btn price_btn openModal">Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider">
+                <div class="slider-wrapper">
+                    <div class="slide">
+                        <div class="slider-elem">
+                            <span class="slider-elem__background">
+                                <img src="img/popcorn.jpg" alt="">
+                            </span>
+                            <div class="slider-elem__top">
+                                <div class="slider-elem__promo">
+                                    <span class="promo_yellow">Товар дня</span>
+                                    <span class="promo_green">- 29%</span>
+                                </div>
+                                <div class="content-elem__title-svg">
+                                    <img src="img/like.svg" alt="">
+                                    <img src="img/Eye.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="slider-elem__bot">
+                                <span class="slider-elem__name">Попкорн соленый, для СВЧ-печи, 120 г</span>
+                                <div class="slider-elem__price">
+                                    <span>160 ₽</span>
+                                    <button class="btn slider-elem__btn openModal">Оставить заявку</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slider-elem">
+                            <span class="slider-elem__background">
+                                <img src="img/icecream.jpg" alt="">
+                            </span>
+                            <div class="slider-elem__top">
+                                <div class="slider-elem__promo">
+                                    <span class="promo_purple">Хит</span>
+                                </div>
+                                <div class="content-elem__title-svg">
+                                    <img src="img/like.svg" alt="">
+                                    <img src="img/Eye.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="slider-elem__bot">
+                                <span class="slider-elem__name">Эскимо с малиной, 150 г</span>
+                                <div class="slider-elem__price">
+                                    <span>190 ₽</span>
+                                    <button class="btn slider-elem__btn openModal">Оставить заявку</button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+        <script src="js/modal.js"></script>
+        <script src="js/slider.js"></script>
+    </div>
+</body>
+</html>
